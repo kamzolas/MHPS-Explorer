@@ -1,26 +1,29 @@
-🧬 MHPS Explorer
-MASLD Human Proximity Score Web Tool
+# 🧬 MHPS Explorer  
+## MASLD Human Proximity Score Web Tool
 
-MHPS Explorer is an interactive Shiny application that benchmarks rodent MASLD models against human disease using integrated:
+**Software Developer**: Ioannis Kamzolas  
+**email**: *ik352@cam.ac.uk*
 
-PHPS – Phenotypic Human Proximity Score
+---
 
-HHPS – Histological Human Proximity Score
+## Overview
 
-DHPS – Transcriptomic Disease Human Proximity Score
+**MHPS Explorer** is an interactive Shiny application designed to benchmark rodent MASLD models against human disease using integrated multi-layer evidence:
 
-→ Combined into MHPS (MASLD Human Proximity Score)
+- **PHPS** – Phenotypic Human Proximity Score  
+- **HHPS** – Histological Human Proximity Score  
+- **DHPS** – DSEA Human Proximity Score (Transcriptomics)  
+- **MHPS** – Integrated MASLD Human Proximity Score  
 
-This tool accompanies:
+The framework integrates phenotypic, histological, and transcriptomic similarity to human MASLD.
 
-Vacca, Kamzolas, Mørch Harder et al.
-Nature Metabolism (2024)
-https://www.nature.com/articles/s42255-024-01043-6
+---
 
-📦 Repository Structure
+## Repository Structure
 
-This GitHub repository contains the application code only:
+This GitHub repository contains the **application source code only**:
 
+```
 ui.R
 server.R
 global.R
@@ -28,44 +31,50 @@ renv.lock
 renv/
 www/
 example_files/
+```
 
+Due to size limitations, large data directories are hosted separately.
 
-Large data directories are not stored in GitHub to keep the repository lightweight.
+---
 
-📊 Required Data Files (Zenodo)
+## Required Data (Zenodo)
 
-The following two folders are required to run the application:
+The following folders are required to run the application:
 
-R_sources/
+- `R_sources/`
+- `file_sources/`
 
-file_sources/
+They are archived and publicly available at:
 
-They are available via Zenodo:
+https://zenodo.org/records/18620900
 
-🔗 https://zenodo.org/records/18620900
+---
 
-⚙️ Installation & Setup
-1️⃣ Clone the Repository
+## Installation Instructions
+
+### 1️⃣ Clone the repository
+
+```bash
 git clone https://github.com/kamzolas/MHPS-Explorer.git
 cd MHPS-Explorer
-
+```
 
 Or download as ZIP from GitHub.
 
-2️⃣ Download Required Data
+---
+
+### 2️⃣ Download Required Data
 
 From Zenodo:
 
-Download:
+- Download `R_sources.zip`
+- Download `file_sources.zip`
 
-R_sources.zip
+Unzip both files into the **root directory** of the repository.
 
-file_sources.zip
+Your folder structure must look like:
 
-Unzip both files into the root directory of this repository.
-
-After extraction, your folder structure should look like:
-
+```
 MHPS-Explorer/
 │
 ├── R_sources/
@@ -76,55 +85,69 @@ MHPS-Explorer/
 ├── renv/
 ├── renv.lock
 └── www/
+```
 
+The application will **not run** if these folders are missing.
 
-⚠️ The app will not run if these folders are missing.
+---
 
-3️⃣ Restore the R Environment
+### 3️⃣ Restore the R Environment
 
-This project uses renv for reproducibility.
+This project uses **renv** for reproducibility.
 
 In R:
 
+```r
 install.packages("renv")   # if needed
 renv::restore()
+```
 
+---
 
-This will install all required dependencies.
+### 4️⃣ Run the Application
 
-4️⃣ Run the Application
-
-From R:
-
+```r
 shiny::runApp()
+```
 
+Or open `MHPS_webtool_ShinyApp.Rproj` in RStudio and click **Run App**.
 
-Or open MHPS_webtool_ShinyApp.Rproj in RStudio and click Run App.
+---
 
-🖥 System Requirements
+## System Requirements
 
-R ≥ 4.2 recommended
+- R ≥ 4.0 recommended  
+- macOS, Linux, or Windows  
+- Internet connection required for Altmetric badge rendering  
 
-macOS, Linux, or Windows
+---
 
-Internet connection required for Altmetric badge rendering
+## Data Summary
 
-📚 Citation
+The integrated dataset includes:
 
-If you use MHPS Explorer in your work, please cite:
+- 598 animals  
+- 509 mice  
+- 89 rats  
+- 41 MASLD models  
+- Integrated phenotypic, histological, and transcriptomic layers  
 
-Vacca M, Kamzolas I, Mørch Harder L et al.
-Nature Metabolism (2024)
-https://www.nature.com/articles/s42255-024-01043-6
+---
 
-🔬 Data Provenance
+## Citation
 
-Preclinical dataset includes:
+If you use **MHPS Explorer**, please cite:
 
-598 animals
+Vacca M, Kamzolas I, Mørch Harder L et al.  
+*Nature Metabolism* (2024)  
+https://www.nature.com/articles/s42255-024-01043-6  
 
-41 rodent MASLD models
+---
 
-Integrated phenotypic, histological, and transcriptomic profiling
+## Reproducibility
 
-Full datasets are archived via Zenodo for transparency and long-term availability.
+- Code version-controlled via GitHub: https://github.com/kamzolas/MHPS-Explorer   
+- Data archived with DOI via Zenodo: https://zenodo.org/records/18620900  
+- R environment locked using `renv`  
+
+This ensures full reproducibility of the MHPS framework.
