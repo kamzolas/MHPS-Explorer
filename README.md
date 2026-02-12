@@ -1,7 +1,7 @@
 🧬 MHPS Explorer
 MASLD Human Proximity Score Web Tool
 
-MHPS Explorer is an interactive Shiny application that enables benchmarking of rodent MASLD models against human disease using integrated:
+MHPS Explorer is an interactive Shiny application that benchmarks rodent MASLD models against human disease using integrated:
 
 PHPS – Phenotypic Human Proximity Score
 
@@ -19,25 +19,18 @@ https://www.nature.com/articles/s42255-024-01043-6
 
 📦 Repository Structure
 
-This GitHub repository contains:
+This GitHub repository contains the application code only:
 
 ui.R
-
 server.R
-
 global.R
-
 renv.lock
-
 renv/
-
 www/
-
 example_files/
 
-Large data directories are not stored in GitHub.
 
-They are deposited separately in Zenodo for reproducibility.
+Large data directories are not stored in GitHub to keep the repository lightweight.
 
 📊 Required Data Files (Zenodo)
 
@@ -47,20 +40,19 @@ R_sources/
 
 file_sources/
 
-They are available here:
+They are available via Zenodo:
 
-🔗 Zenodo Record:
-https://zenodo.org/records/18620900
+🔗 https://zenodo.org/records/18620900
 
 ⚙️ Installation & Setup
-Step 1 — Clone this repository
+1️⃣ Clone the Repository
 git clone https://github.com/kamzolas/MHPS-Explorer.git
 cd MHPS-Explorer
 
 
 Or download as ZIP from GitHub.
 
-Step 2 — Download Required Data
+2️⃣ Download Required Data
 
 From Zenodo:
 
@@ -70,7 +62,7 @@ R_sources.zip
 
 file_sources.zip
 
-Unzip both files into the root directory of this repository
+Unzip both files into the root directory of this repository.
 
 After extraction, your folder structure should look like:
 
@@ -88,26 +80,26 @@ MHPS-Explorer/
 
 ⚠️ The app will not run if these folders are missing.
 
-Step 3 — Restore the R Environment
+3️⃣ Restore the R Environment
 
-The project uses renv to ensure reproducibility.
+This project uses renv for reproducibility.
 
-Open R in the project folder and run:
+In R:
 
-install.packages("renv")   # if not installed
+install.packages("renv")   # if needed
 renv::restore()
 
 
-This will install all required packages.
+This will install all required dependencies.
 
-Step 4 — Run the App
+4️⃣ Run the Application
 
 From R:
 
 shiny::runApp()
 
 
-Or open the .Rproj file in RStudio and click Run App.
+Or open MHPS_webtool_ShinyApp.Rproj in RStudio and click Run App.
 
 🖥 System Requirements
 
@@ -115,9 +107,7 @@ R ≥ 4.2 recommended
 
 macOS, Linux, or Windows
 
-Internet connection required for:
-
-Altmetric badge rendering
+Internet connection required for Altmetric badge rendering
 
 📚 Citation
 
@@ -129,7 +119,7 @@ https://www.nature.com/articles/s42255-024-01043-6
 
 🔬 Data Provenance
 
-Preclinical data include:
+Preclinical dataset includes:
 
 598 animals
 
@@ -138,13 +128,3 @@ Preclinical data include:
 Integrated phenotypic, histological, and transcriptomic profiling
 
 Full datasets are archived via Zenodo for transparency and long-term availability.
-
-🧠 Reproducibility
-
-Code version controlled via GitHub
-
-Data archived with DOI via Zenodo
-
-R environment locked via renv
-
-This ensures full reproducibility of the published MHPS framework.
